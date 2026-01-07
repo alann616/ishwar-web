@@ -14,3 +14,7 @@
   /* --- EXTRAS --- */
   --tracking-ultra: 0.3em;
 }
+
+html {
+  scroll-behavior: smooth;
+}
