@@ -18,7 +18,7 @@ export default function About() {
       {/* 2. LADO DERECHO: El Manifiesto (Texto) */}
       <div className="flex-1 max-w-lg flex flex-col justify-center text-center md:text-left">
         
-        <h2 className="font-serif text-4xl md:text-5xl text-brand-white mb-8 tracking-tight uppercase">
+        <h2 className="font-serif text-4xl md:text-5xl text-brand-bone mb-8 tracking-tight uppercase">
           The Alchemist <br /> of Realism
         </h2>
 

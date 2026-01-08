@@ -1,6 +1,7 @@
 import About from "./components/About";
 import GallerySlider from "./components/GallerySlider";
 import ScrollIndicator from "./components/ScrollIndicator";
+import Expertise from "./components/Expertise";
 
 export default function Home() {
   return (
@@ -35,6 +36,11 @@ export default function Home() {
       {/* SECCIÓN 3: GALERÍA */}
       <div id="gallery" className="w-full relative z-10">
         <GallerySlider />
+      </div>
+
+      {/* SECCIÓN 4: EXPERTISE (Reemplazo de Reviews) */}
+      <div id="expertise" className="w-full relative z-10">
+        <Expertise />
       </div>
 
     </main>

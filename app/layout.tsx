@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { Bodoni_Moda, Jost } from "next/font/google";
 import "./globals.css";
+import Navbar from "./components/Navbar";
 
 const bodoni = Bodoni_Moda({
   subsets: ["latin"],
-  variable: "--font-bodoni",
+  variable: "--font-bodoni-moda",
   display: "swap",
 });
 
@@ -27,10 +28,10 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${bodoni.variable} ${jost.variable}`}>
       {/* ARQUITECTURA LIMPIA:
-         Aquí definimos el fondo y el color de texto BASE para TODA la app.
-         Si mañana quieres cambiar el fondo a rojo, SOLO lo cambias aquí.
+        Definimos el fondo y el color de texto BASE para TODA la app.
       */}
       <body className="antialiased bg-brand-black text-brand-white font-sans min-h-screen flex flex-col">
+        <Navbar />
         {children}
       </body>
     </html>

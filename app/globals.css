@@ -22,6 +22,7 @@
 
 html {
   scroll-behavior: smooth;
+  font-optical-sizing: auto;
 }
 
 /* Utilidad para ocultar scrollbar pero permitir funcionalidad */
