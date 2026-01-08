@@ -1,20 +1,34 @@
 @import "tailwindcss";
 
 @theme {
-  /* --- FUENTES --- */
-  --font-serif: var(--font-bodoni);
+  /* Paleta Smoky Nomad Definida */
+  --color-brand-black: #11120D;    /* Fondo Oscuro */
+  --color-brand-bone: #D8CFBC;     /* Texto Claro (Hueso) */
+  --color-brand-olive: #8F9178;    /* Acentos (Dorado/Verde) */
+  --color-brand-gray: #2A2B26;     /* Detalles */
+  
+  /* Fuentes */
+  --font-serif: var(--font-bodoni-moda);
   --font-sans: var(--font-jost);
-
-  /* --- PALETA "SMOKY NOMAD" --- */
-  --color-brand-black: #11120D; 
-  --color-brand-bone: #D8CFBC;
-  --color-brand-olive: #565449;
-  --color-brand-white: #FFFBF4;
-
-  /* --- EXTRAS --- */
-  --tracking-ultra: 0.3em;
+  
+  /* Animaciones */
+  --animate-float: float 6s ease-in-out infinite;
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+/* Utilidad para ocultar scrollbar pero permitir funcionalidad */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

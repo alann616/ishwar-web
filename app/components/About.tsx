@@ -5,7 +5,7 @@ export default function About() {
     <section className="w-full min-h-screen flex flex-col md:flex-row items-center justify-center px-8 py-24 gap-12 md:gap-24 bg-brand-black">
       
       {/* 1. LADO IZQUIERDO: El Marco de la Foto (Placeholder) */}
-      <div className="flex-1 w-full max-w-md aspect-[3/4] border border-brand-olive bg-brand-gray/10 flex items-center justify-center relative">
+      <div className="flex-1 w-full max-w-md aspect-3/4 border border-brand-olive bg-brand-gray/10 flex items-center justify-center relative">
         {/* Este texto solo es para que sepas qué va ahí, luego lo quitamos */}
         <span className="font-sans text-brand-olive text-xs tracking-widest uppercase">
           [ Artist Portrait ]
