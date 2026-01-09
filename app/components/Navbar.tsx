@@ -1,9 +1,11 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { useBooking } from "./BookingContext"; // <--- IMPORTAR
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const { openBooking } = useBooking(); // <--- USAR HOOK
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,7 +15,6 @@ export default function Navbar() {
         setIsScrolled(false);
       }
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -45,33 +46,23 @@ export default function Navbar() {
           </span>
         </div>
 
-        {/* MENÚ ACTUALIZADO: Artist | Portfolio | Styles */}
+        {/* MENÚ */}
         <div className="hidden md:flex gap-10 items-center">
-          <button 
-            onClick={() => scrollToSection('about')} 
-            className="text-[11px] font-sans font-medium text-brand-bone hover:text-brand-olive tracking-[0.2em] uppercase transition-colors"
-          >
+          <button onClick={() => scrollToSection('about')} className="text-[11px] font-sans font-medium text-brand-bone hover:text-brand-olive tracking-[0.2em] uppercase transition-colors">
             The Artist
           </button>
-          
-          <button 
-            onClick={() => scrollToSection('gallery')} 
-            className="text-[11px] font-sans font-medium text-brand-bone hover:text-brand-olive tracking-[0.2em] uppercase transition-colors"
-          >
+          <button onClick={() => scrollToSection('gallery')} className="text-[11px] font-sans font-medium text-brand-bone hover:text-brand-olive tracking-[0.2em] uppercase transition-colors">
             Portfolio
           </button>
-
-          {/* NUEVO ENLACE A "EXPERTISE" */}
-          <button 
-            onClick={() => scrollToSection('expertise')} 
-            className="text-[11px] font-sans font-medium text-brand-bone hover:text-brand-olive tracking-[0.2em] uppercase transition-colors"
-          >
+          <button onClick={() => scrollToSection('expertise')} className="text-[11px] font-sans font-medium text-brand-bone hover:text-brand-olive tracking-[0.2em] uppercase transition-colors">
             Styles
           </button>
         </div>
 
-        {/* BOTÓN BOOK NOW */}
-        <button className={`
+        {/* BOTÓN CON ACCIÓN */}
+        <button 
+            onClick={openBooking} // <--- CLICK AQUÍ
+            className={`
             px-8 py-3 border font-sans text-[10px] font-bold tracking-[0.25em] uppercase transition-all duration-500
             ${isScrolled 
                 ? "bg-brand-bone text-brand-black border-brand-bone hover:bg-transparent hover:text-brand-bone" 

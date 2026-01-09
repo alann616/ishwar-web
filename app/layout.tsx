@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Bodoni_Moda, Jost } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
+import { BookingProvider } from "./components/BookingContext";
 
 const bodoni = Bodoni_Moda({
   subsets: ["latin"],
@@ -31,8 +32,10 @@ export default function RootLayout({
         Definimos el fondo y el color de texto BASE para TODA la app.
       */}
       <body className="antialiased bg-brand-black text-brand-white font-sans min-h-screen flex flex-col">
-        <Navbar />
-        {children}
+        <BookingProvider>
+          <Navbar />
+          {children}
+        </BookingProvider>
       </body>
     </html>
   );

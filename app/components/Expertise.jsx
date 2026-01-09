@@ -40,7 +40,7 @@ export default function Expertise() {
       {/* Grid de Estilos */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border-t border-brand-white/10">
         {styles.map((style) => (
-          <div key={style.id} className="group relative border-b md:border-b-0 md:border-r border-brand-white/10 p-8 md:p-12 min-h-[300px] flex flex-col justify-between hover:bg-brand-white/5 transition-colors duration-500 last:border-r-0 last:border-b-0">
+          <div key={style.id} className="group relative border-b md:border-b-0 md:border-r border-brand-white/10 p-8 md:p-12 min-h-75 flex flex-col justify-between hover:bg-brand-white/5 transition-colors duration-500 last:border-r-0 last:border-b-0">
             
             {/* Número decorativo */}
             <span className="font-serif text-6xl text-brand-bone/5 group-hover:text-brand-olive/20 transition-colors duration-500">
