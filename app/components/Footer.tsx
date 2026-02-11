@@ -80,6 +80,14 @@ export default function Footer() {
                     Alan Corona
                 </span>
             </a>
+            <div className="mt-8 text-right">
+                <span className="block font-sans text-[10px] text-brand-bone/40 uppercase tracking-widest mb-1">
+                    Location
+                </span>
+                <span className="block font-sans text-[10px] text-brand-bone uppercase tracking-widest">
+                    The Nomad Project <br/> Mexico
+                </span>
+            </div>
         </div>
       </div>
     </footer>

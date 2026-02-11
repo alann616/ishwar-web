@@ -17,8 +17,8 @@ const jost = Jost({
 });
 
 export const metadata: Metadata = {
-  title: "Ishwar Hernandez | Nomad Studio",
-  description: "Exclusive Tattoo Artist",
+  title: "Ishwar Hernandez | The Nomad Project",
+  description: "Exclusive Realism Tattoo Artist",
 };
 
 export default function RootLayout({

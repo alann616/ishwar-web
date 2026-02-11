@@ -20,10 +20,11 @@ export default function Expertise() {
   ];
 
   return (
-    <section className="w-full bg-brand-black py-24 md:py-32 px-6 md:px-24 border-t border-brand-white/5">
+    <section className="w-full bg-brand-black py-24 px-6 md:px-24">
       
-      {/* Encabezado inspirado en Ganga */}
-      <div className="mb-16 md:mb-24 flex flex-col md:flex-row justify-between items-end gap-6">
+      {/* HEADER */}
+      {/* CAMBIO: Reduje 'mb-24' a 'mb-12' para pegar el título a la tabla y que no se vea "despegado" */}
+      <div className="mb-12 flex flex-col md:flex-row justify-between items-end gap-6">
         <div>
            <span className="font-sans text-brand-olive text-[10px] tracking-[0.3em] uppercase block mb-4">
               Technical Mastery
@@ -37,27 +38,37 @@ export default function Expertise() {
         </p>
       </div>
 
-      {/* Grid de Estilos */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border-t border-brand-white/10">
+      {/* GRID DE ESTILOS (TABLA SÓLIDA) */}
+      {/* CAMBIO CLAVE: 'border-y' (arriba Y ABAJO). Ahora la línea inferior EXISTE. */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border-y border-brand-white/10">
+        
         {styles.map((style) => (
-          <div key={style.id} className="group relative border-b md:border-b-0 md:border-r border-brand-white/10 p-8 md:p-12 min-h-75 flex flex-col justify-between hover:bg-brand-white/5 transition-colors duration-500 last:border-r-0 last:border-b-0">
+          <div key={style.id} className="group relative p-8 md:p-12 min-h-87.5 flex flex-col justify-end hover:bg-brand-white/5 transition-colors duration-500 border-b md:border-b-0 md:border-r border-brand-white/10 last:border-b-0 last:md:border-r-0">
             
-            {/* Número decorativo */}
-            <span className="font-serif text-6xl text-brand-bone/5 group-hover:text-brand-olive/20 transition-colors duration-500">
-              {style.id}
-            </span>
+            {/* NOTA TÉCNICA SOBRE BORDES INTERNOS: 
+                - Móvil: border-b en cada item (menos el último).
+                - Desktop: border-r en cada item (menos el último).
+                Esto crea la cuadrícula perfecta sin líneas dobles.
+            */}
 
-            {/* Contenido */}
+            {/* 1. NÚMERO */}
+            <div className="mb-4">
+                <span className="font-serif text-6xl text-brand-bone/10 group-hover:text-brand-olive/20 transition-colors duration-500 block leading-none">
+                {style.id}
+                </span>
+            </div>
+
+            {/* 2. TEXTO */}
             <div className="relative z-10">
-               <h3 className="font-serif text-2xl text-brand-bone mb-4 group-hover:translate-x-2 transition-transform duration-500">
+               <h3 className="font-serif text-3xl text-brand-bone mb-4 group-hover:translate-x-2 transition-transform duration-500">
                  {style.title}
                </h3>
-               <p className="font-sans text-xs text-brand-bone/60 leading-relaxed group-hover:text-brand-bone/80 transition-colors">
+               <p className="font-sans text-xs text-brand-bone/60 leading-relaxed group-hover:text-brand-bone/80 transition-colors max-w-xs">
                  {style.description}
                </p>
             </div>
 
-            {/* Icono flecha sutil */}
+            {/* FLECHA */}
             <div className="absolute top-8 right-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                 <svg className="w-6 h-6 text-brand-olive" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="square" strokeLinejoin="miter" strokeWidth="1" d="M17 8l4 4m0 0l-4 4m4-4H3" />
